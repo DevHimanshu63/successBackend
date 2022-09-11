@@ -22,3 +22,12 @@ class Course(models.Model):
         return self.course_name
 
 
+class Campus(models.Model):
+    sno=models.AutoField(primary_key=True)
+    student_name=models.CharField(max_length=250)
+    course_name=models.TextField()
+    studentImg=models.ImageField(upload_to='static/img')
+    marks=models.IntegerField(max_length=200)
+    datetime=models.DateTimeField(auto_now_add=True,blank=True)
+    def __str__(self):
+        return self.course_name

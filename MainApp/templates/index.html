@@ -200,27 +200,13 @@
     <div class="campusImg">
       <h1 id="campus">Campus</h1>
       <div class="student_Ability abc">
+        {% for s in student %}
           <div class="student_img">
-            <img src="static/img/himanshu.jpg" alt="">
-            <h3 class="stdName">Student Name</h3>
-            <p class="stdName">Course</p>
+            <img src="{{s.studentImg.url}}" alt="">
+            <h3 class="stdName">{{s.student_name}}</h3>
+            <p class="stdName">{{s.course_name}}</p>
           </div>
-          <div class="student_img">
-            <img src="static/img/himanshu.jpg" alt="">
-            <h3 class="stdName">Student Name</h3>
-            <p class="stdName">Course</p>
-          </div>
-          <div class="student_img">
-            <img src="static/img/himanshu.jpg" alt="">
-            <h3 class="stdName">Student Name</h3>
-            <p class="stdName">Course</p>
-          </div>
-          <div class="student_img">
-            <img src="static/img/himanshu.jpg" alt="">
-            <h3 class="stdName">Student Name</h3>
-            <p class="stdName">Course</p>
-          </div>
-          
+          {% endfor %}
        
       </div>
     </div>

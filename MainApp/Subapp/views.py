@@ -1,13 +1,15 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
+from Subapp.models import Campus
 from Subapp.models import Course
 from Subapp.models import Contact
 from django.contrib import messages
 # Create your views here.
 def home(request):
     allcourse=Course.objects.all()
+    allstudent=Campus.objects.all()
     # print(allcourse)
-    context={'allpost':allcourse}
+    context={'allpost':allcourse,'student':allstudent}
     return render(request,"index.html",context)
     
 
