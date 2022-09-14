@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {% load static %}
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'admission.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Registration Form</title>
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Admission form</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Course</span>
+            <input type="text" placeholder="Enter your course name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" >
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Any Query</span>
+            <input type="text" placeholder="Enter your Query" >
+          </div>
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

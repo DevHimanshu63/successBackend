@@ -33,9 +33,7 @@ def contact(request):
     return redirect('/')
 
 
-def course(request):
-    allcourse=Course.objects.all()
-    
-    context={'allpost':allcourse}
-    return render(request,"index.html",context)
+def admission(request):
+
+    return render(request,"admission.html")
     

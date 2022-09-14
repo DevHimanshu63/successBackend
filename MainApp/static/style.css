@@ -74,6 +74,23 @@
     margin-top: 300px;
     margin-right: 150px;
   }
+
+  
+  /* admission container for desktop */
+
+  .admission-container{
+    border:1px solid red; 
+    width:150px;background-color:
+   red;margin-top: 10px;
+  }
+
+  .admission-content{
+    text-align:center ;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* admission css end for desktop */
   .first-word {
     color: #79d1e5;
     font-weight: bold;
@@ -259,6 +276,21 @@
     margin-left: 50px;
     
   }
+  /* admission section */
+  .admiss-container{
+    position: absolute;
+    font-size: 16px;
+    margin-top: 70px;
+
+  }
+  .admiss-content{
+    color: red !important;
+    width: 150px;
+    border: 1px solid red;
+    text-align: center;
+    margin-top: 60px !important;
+  }
+  /* admission section end */
   
   .banner-contentforQuery{
     display: block;
