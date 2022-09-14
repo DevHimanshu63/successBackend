@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
+from Subapp.models import Admission
 from Subapp.models import Campus
 from Subapp.models import Course
 from Subapp.models import Contact
@@ -28,12 +29,26 @@ def contact(request):
         
     else:
         # return HttpResponse("message has not been send")
-        messages.error(request,"Message ha not been send !")
+        messages.error(request,"Message has not been send !")
         # messages.success(request,"your information has been sent successfully!")
     return redirect('/')
 
 
 def admission(request):
-
+    if request.method=="POST":
+        name=request.POST['name']
+        allCourse=request.POST['allCourse']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        query=request.POST['query']
+        if len(name)<2:
+            messages.error(request,"Enter your valid Name.")
+        else:
+            obj=Admission(fullName=name,stu_course=allCourse,Email=email,Phone=phone,query=query)
+            obj.save()
+            messages.success(request,"We will contact ASAP")
+            return redirect('/admission')
+    
+    
     return render(request,"admission.html")
     

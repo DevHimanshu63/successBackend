@@ -3,36 +3,37 @@
     {% load static %}
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Registration Form | CodingLab </title>
+    <title> Admission Form </title>
     <link rel="stylesheet" href="{% static 'admission.css' %}">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Registration Form</title>
+    
    </head>
 <body>
   <div class="container">
     <div class="title">Admission form</div>
     <div class="content">
-      <form action="#">
+      <form action="/admission/" method="post">
+        {% csrf_token %}
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" name="name" id="name" required>
           </div>
           <div class="input-box">
             <span class="details">Course</span>
-            <input type="text" placeholder="Enter your course name" required>
+            <input type="text" placeholder="Enter your course name" name="allCourse" id="allCourse" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" >
+            <input type="text" placeholder="Enter your email" name="email" id="email">
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="text" placeholder="Enter your number" name="phone" id="phone" required>
           </div>
           <div class="input-box">
             <span class="details">Any Query</span>
-            <input type="text" placeholder="Enter your Query" >
+            <input type="text" placeholder="Enter your Query" name="query" id="query" >
           </div>
           
         </div>
@@ -40,6 +41,11 @@
         <div class="button">
           <input type="submit" value="Submit">
         </div>
+
+        {% for message in messages %}
+            <div class="mainmsgdiv"><strong class="contactMsg">Message:</strong><span style="color:green;font-weight:100;">{{ message }}</span></div>
+          </div>
+        {% endfor %}
       </form>
     </div>
   </div>

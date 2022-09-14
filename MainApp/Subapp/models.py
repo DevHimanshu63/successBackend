@@ -27,7 +27,19 @@ class Campus(models.Model):
     student_name=models.CharField(max_length=250)
     course_name=models.TextField()
     studentImg=models.ImageField(upload_to='static/img')
-    marks=models.IntegerField(max_length=200)
+    marks=models.IntegerField()
     datetime=models.DateTimeField(auto_now_add=True,blank=True)
     def __str__(self):
         return self.course_name
+
+
+class Admission(models.Model):
+    sno=models.AutoField(primary_key=True)
+    fullName=models.CharField(max_length=250)
+    stu_course=models.CharField(max_length=250)
+    Email=models.CharField(max_length=250)
+    Phone=models.CharField(max_length=250)
+    query=models.TextField()
+    datetime=models.DateTimeField(auto_now_add=True,blank=True)
+    def __str__(self):
+        return self.fullName
