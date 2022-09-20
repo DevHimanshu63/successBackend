@@ -43,3 +43,25 @@ class Admission(models.Model):
     datetime=models.DateTimeField(auto_now_add=True,blank=True)
     def __str__(self):
         return self.fullName
+    
+
+class Team(models.Model):
+    sno=models.AutoField(primary_key=True)
+    MemberImg=models.ImageField(upload_to='static/img',default='')
+    fullName=models.CharField(max_length=250)
+    designation=models.CharField(max_length=250)
+    role=models.CharField(max_length=250)
+    Email=models.CharField(max_length=250)
+    datetime=models.DateTimeField(auto_now_add=True,blank=True)
+    def __str__(self):
+        return self.fullName
+    
+
+class Testimonials(models.Model):
+    sno=models.AutoField(primary_key=True)
+    StuImg=models.ImageField(upload_to='static/img')
+    fullName=models.CharField(max_length=250)
+    Message=models.TextField()
+    datetime=models.DateTimeField(auto_now_add=True,blank=True)
+    def __str__(self):
+        return self.fullName
